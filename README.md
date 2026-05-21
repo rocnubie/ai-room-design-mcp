@@ -9,6 +9,8 @@
 [![MCP](https://img.shields.io/badge/MCP-1.0-blue)](https://modelcontextprotocol.io)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 
+<p align="center"><a href="https://airoom-design.com"><img src="./assets/logo.png" alt="AI Room Design" width="96" /></a></p>
+
 A Model Context Protocol server that exposes the canonical AI Room Design knowledge surface — image generation workflows and styles, pricing, FAQ, official links — to MCP-compatible AI clients such as Claude Desktop, Cursor, Windsurf, and Continue. Read-only, no API keys, no quota, ~50 ms cold start.
 
 Official website: https://airoom-design.com
