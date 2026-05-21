@@ -1,16 +1,19 @@
-# AI Room Design MCP
+# AI Room Design MCP Server
 
-A minimal, read-only MCP for AI Room Design.
+> AI Room Design - Interior Visualization with AI
 
-This package is generated from the MSA multi-site system and is built for one very specific job:
-- provide a real MCP that can be installed and indexed
-- keep the setup simple with local `stdio`
-- avoid backend integration and API quota costs
-- send users back to the official AI Room Design website
+[![Zero Config](https://img.shields.io/badge/setup-zero--config-7c3aed)](#installation)
+[![Read Only](https://img.shields.io/badge/server-read--only-2ea44f)](#tools)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![smithery](https://smithery.ai/badge/ai-room-design)](https://smithery.ai)
+[![MCP](https://img.shields.io/badge/MCP-1.0-blue)](https://modelcontextprotocol.io)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+
+A Model Context Protocol server that exposes the canonical AI Room Design knowledge surface — image generation workflows and styles, pricing, FAQ, official links — to MCP-compatible AI clients such as Claude Desktop, Cursor, Windsurf, and Continue. Read-only, no API keys, no quota, ~50 ms cold start.
 
 Official website: https://airoom-design.com
 
-## About AI Room Design
+## 🎨 About AI Room Design
 
 AI Room Design (airoom-design.com) is a browser-based interior design tool that uses artificial intelligence to reimagine living spaces from a single photo. Users upload an image of any room, select a target style and customization options, and receive a fully redesigned visualization in seconds. The platform supports over eight room types — living rooms, bedrooms, kitchens, bathrooms, dining rooms, offices, kids' rooms, and balconies — and applies more than twenty distinct design styles powered by models including Google Gemini 2.5. A free tier with five monthly projects makes it accessible without a paid commitment, while premium plans support higher volume and batch workflows.
 
@@ -36,87 +39,81 @@ AI Room Design (airoom-design.com) is a browser-based interior design tool that 
 
 AI Room Design targets anyone who needs to visualize interior changes quickly and without professional design software. Homeowners exploring renovation ideas form the broadest segment — the free tier and simple four-step workflow lower the barrier for people with no design background. Real estate agents and property developers benefit from virtual staging that speeds up listing preparation. Interior designers and architects can use it as a rapid ideation layer, generating style variants to show clients before moving into detailed planning. Home staging consultants and renovation advisors will find the batch processing and export features practical for client-facing deliverables. The platform does not require design expertise; anyone comfortable uploading a photo can produce a plausible redesign.
 
-## Core Site Functions
+## Tools
 
-- Image generation and editing workflows for prompts, references, and visual iteration.
+### `list_styles`
+Return the canonical list of image-generation styles or presets the site exposes. (AI Room Design)
 
-## Why This Site Is Good
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- The MCP points users to the official AI Room Design website instead of a third-party landing page.
-- It keeps the package lightweight and easy to install because everything is static and read-only.
-- It gives AI clients canonical links for docs, pricing, and support in one place.
-- Useful when users want fast visual output without switching between multiple tools.
+### `get_pricing`
+Return the canonical pricing entry point for AI Room Design.
 
-## Official Links
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- Website: https://airoom-design.com
-- Docs: https://airoom-design.com/docs
-- Pricing: https://airoom-design.com
-- Contact: https://airoom-design.com
-- Support: support@airoom-design.com
+### `get_official_links`
+Return the canonical list of official links for AI Room Design (website, support, docs when available).
 
-## Site Metadata
+_Input:_ no parameters. _Returns:_ text/markdown.
 
-- Site ID: ai-room-design
-- Site Name: AI Room Design
-- Default language: en
-- Available languages: en
-- Feature tags: `image-gen`
+## Resources
 
-## MCP Resources
+- `site://ai-room-design/styles` — Supported image-generation styles and presets.
+- `site://ai-room-design/pricing` — Canonical pricing entry point.
+- `site://ai-room-design/faq` — Short FAQ generated from public site metadata.
+- `site://ai-room-design/links` — Canonical URLs to share with users.
 
-- `site://meta`
-- `site://pages/overview`
-- `site://pages/pricing`
-- `site://pages/faq`
-- `site://pages/links`
+## Installation
 
-## Why This MCP Is Useful
-
-- It is a real MCP package, not just a README-only repository.
-- It is lightweight enough for quick indexing and easy local installation.
-- It gives AI clients structured access to official website context and links.
-- It is simple to fork, publish, and maintain for directory submissions.
-
-## Quick Start
-
-Install dependencies:
+Clone the repository and point your MCP client at the local entry point.
 
 ```bash
+git clone https://github.com/<your-account>/ai-room-design-mcp.git
+cd ai-room-design-mcp
 pnpm install
 ```
 
-Run the server:
+### Claude Desktop
 
-```bash
-pnpm start
-```
-
-Run tests:
-
-```bash
-pnpm test
-```
-
-## Claude Desktop Example
+Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
 
 ```json
 {
   "mcpServers": {
-    "ai-room-design": {
-      "command": "pnpm",
+    "ai-room-design-mcp": {
+      "command": "node",
       "args": [
-        "--dir",
-        "/absolute/path/to/exports/ai-room-design",
-        "start"
+        "/absolute/path/to/ai-room-design-mcp/src/index.mjs"
       ]
     }
   }
 }
 ```
 
-## Directory Submission Notes
+### Cursor / Windsurf / Continue
 
-- Repo type: local `stdio` MCP
-- Maintenance model: generated from the MSA multi-site source
-- Primary goal: directory indexing, official link discovery, and lightweight client install
+Use the same `mcpServers` block in your client's MCP configuration file.
+
+### Debug with MCP Inspector
+
+```bash
+npx @modelcontextprotocol/inspector node src/index.mjs
+```
+
+## Official Links
+
+- Website: https://airoom-design.com
+- Pricing: https://airoom-design.com/pricing
+- Support: support@airoom-design.com
+
+## Development
+
+```bash
+pnpm install
+pnpm start                 # run the server over stdio
+pnpm test                  # run the package tests
+```
+
+## License
+
+MIT

@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Minimal read-only MCP for AI Room Design.",
+  "description": "MCP server for AI Room Design — canonical website knowledge for AI clients.",
   "homepage": "https://airoom-design.com",
   "keywords": [
     "mcp",
     "modelcontextprotocol",
+    "claude",
+    "cursor",
+    "windsurf",
     "ai-room-design",
     "image-gen"
   ],
