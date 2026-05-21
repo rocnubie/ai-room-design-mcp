@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.rocnubie/ai-room-design-mcp",
+  "title": "AI Room Design MCP",
+  "description": "AI Room Design helps users redesign rooms and visualize new interior layouts with AI-generated",
+  "version": "0.1.0",
+  "websiteUrl": "https://airoom-design.com",
+  "repository": {
+    "url": "https://github.com/rocnubie/ai-room-design-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/rocnubie/ai-room-design-mcp/main/assets/logo.png",
+      "mimeType": "image/png"
+    }
+  ]
+}
