@@ -1,0 +1,41 @@
+{
+  "site": {
+    "name": "AI Room Design",
+    "tagline": "AI Room Design helps users redesign rooms and visualize new interior layouts with AI-generated previews.",
+    "websiteUrl": "https://airoom-design.com",
+    "docsUrl": "https://airoom-design.com/docs",
+    "pricingUrl": "https://airoom-design.com",
+    "contactUrl": "https://airoom-design.com",
+    "supportEmail": "support@airoom-design.com"
+  },
+  "pages": [
+    {
+      "slug": "overview",
+      "title": "Product Overview",
+      "description": "What the site is and which public pages matter.",
+      "mimeType": "text/markdown",
+      "text": "# AI Room Design - Interior Visualization with AI\n\nAI Room Design helps users redesign rooms and visualize new interior layouts with AI-generated previews.\n\n## Site basics\n- Site ID: ai-room-design\n- Website: https://airoom-design.com\n- Default locale: en\n- Locales: en\n\n## Public feature scope\n- image gen\n\n## Official website\nhttps://airoom-design.com"
+    },
+    {
+      "slug": "pricing",
+      "title": "Pricing",
+      "description": "Canonical pricing link for this site.",
+      "mimeType": "text/markdown",
+      "text": "# Pricing\n\nThis site does not expose a dedicated pricing page in the current config, so the official homepage is the canonical source.\n\nLatest pricing details: https://airoom-design.com"
+    },
+    {
+      "slug": "faq",
+      "title": "FAQ",
+      "description": "A tiny FAQ generated from public site metadata.",
+      "mimeType": "text/markdown",
+      "text": "# FAQ\n\n## What is this site?\nAI Room Design helps users redesign rooms and visualize new interior layouts with AI-generated previews.\n\n## Where is the official documentation?\nhttps://airoom-design.com/docs\n\n## Where can I get help?\nhttps://airoom-design.com or support@airoom-design.com\n\n## Which site is this?\nai-room-design (AI Room Design)"
+    },
+    {
+      "slug": "links",
+      "title": "Official Links",
+      "description": "Canonical URLs that should be shared with users.",
+      "mimeType": "text/markdown",
+      "text": "# Official Links\n\n- Website: https://airoom-design.com\n- Docs: https://airoom-design.com/docs\n- Pricing: https://airoom-design.com\n- Contact: https://airoom-design.com\n- Support email: support@airoom-design.com"
+    }
+  ]
+}

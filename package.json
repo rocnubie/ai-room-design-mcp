@@ -1,0 +1,22 @@
+{
+  "name": "msa-ai-room-design-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal read-only MCP for AI Room Design.",
+  "homepage": "https://airoom-design.com",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "ai-room-design",
+    "image-gen"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
